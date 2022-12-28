@@ -54,7 +54,7 @@ sudo systemctl start samba-ad-dc
 **Crear una unitat organitzativa, un grup, usuari i afegir-lo al grup:**  
 La gestió es fa amb la comanda samba-tool:  
 ```bash
-sudo samba-tool ou create 'OU=docents,DC=itb,DC=local' --description='Unitat de docents'
+sudo samba-tool ou create 'OU=docents,DC=dom01,DC=com' --description='Unitat de docents'
 sudo samba-tool group add 'docents' --groupou='OU=docents' --description='Grup de docents'
 sudo samba-tool user create 'jordi.casas' 'jordi12345' --userou='OU=docents' --surname='Casas Ballara' --given-name='Jordi'
 sudo samba-tool group addmembers 'docents' jordi.casas
